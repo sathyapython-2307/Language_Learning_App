@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Review</title><link rel="stylesheet" href="/static/css/style.css"></head>
+<body><div class="box">
+{% if word %}
+<h2>{{ word.word }} <a href="/tts/{{ word.word }}">🔊</a></h2>
+<p>{{ word.meaning }}</p>
+<form method="POST" action="/answer/{{ word.id }}">
+<button name="response" value="y">I remembered</button>
+<button name="response" value="n">I forgot</button>
+</form>
+{% else %}
+<p>No words to review now.</p>
+<a href="/dashboard">Back</a>
+{% endif %}
+</div></body>
+</html>

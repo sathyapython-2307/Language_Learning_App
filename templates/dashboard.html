@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title><link rel="stylesheet" href="/static/css/style.css"></head>
+<body><div class="box">
+<h2>Add Vocabulary</h2>
+<form method="POST">
+<input name="word" placeholder="Word" required>
+<input name="meaning" placeholder="Meaning" required>
+<button type="submit">Add</button>
+</form>
+<h3>Your Words</h3>
+{% for item in vocab_list %}
+<p><b>{{ item.word }}</b>: {{ item.meaning }} <a href="/tts/{{ item.word }}">🔊</a></p>
+{% endfor %}
+<a href="/review">Start Review</a> | <a href="/logout">Logout</a>
+</div></body>
+</html>
